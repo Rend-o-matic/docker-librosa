@@ -1,0 +1,9 @@
+# Setup modules
+gevent
+flask
+
+# Libraries for action
+numpy
+pandas
+scipy
+librosa
