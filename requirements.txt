@@ -3,6 +3,8 @@ gevent
 flask
 
 # Libraries for action
+audioread
+SoundFile
 numpy
 pandas
 scipy
