@@ -11,3 +11,4 @@ scipy
 librosa
 ffmpeg-python
 ibm-cos-sdk
+opencv-python
