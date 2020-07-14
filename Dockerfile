@@ -21,6 +21,7 @@ FROM tensorflow/tensorflow:latest
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         gcc \
         libc-dev \
+	cmake \
         libxslt-dev \
         libxml2-dev \
         libffi-dev \
