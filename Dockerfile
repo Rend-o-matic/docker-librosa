@@ -16,7 +16,7 @@
 #
 
 # Dockerfile for python actions, overrides and extends ActionRunner from actionProxy
-FROM tensorflow/tensorflow:latest
+FROM tensorflow/tensorflow:2.3.0
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         gcc \
@@ -27,10 +27,21 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         libffi-dev \
         libssl-dev \
 	libsndfile-dev \
-	ffmpeg \
+	nasm \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN apt-cache search linux-headers-generic
+
+ENV FFMPEG_VERSION="4.3.1"
+
+RUN curl -fsSL https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz -o /tmp/ffmpeg-${FFMPEG_VERSION}.tar.gz \
+    && cd /tmp \
+    && tar -xzf ffmpeg-${FFMPEG_VERSION}.tar.gz \
+    && cd ffmpeg-${FFMPEG_VERSION} \
+    && ./configure --enable-openssl \
+    && make \
+    && make install \
+    && rm /tmp/ffmpeg-${FFMPEG_VERSION}.tar.gz
 
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip six && pip3 install --no-cache-dir -r requirements.txt
