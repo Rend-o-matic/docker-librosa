@@ -28,6 +28,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         libssl-dev \
 	libsndfile-dev \
 	nasm \
+	x264 \
+	libx264-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN apt-cache search linux-headers-generic
