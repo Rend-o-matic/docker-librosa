@@ -58,7 +58,7 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
 pycrypto==2.6.1
-pygobject==3.26.1
+pygobject==3.36.1
 pyloudnorm==0.1.0
 pyparsing==2.4.7
 pysptk==0.1.18
