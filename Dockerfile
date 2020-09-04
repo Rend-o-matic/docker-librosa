@@ -36,7 +36,7 @@ RUN apt-get update && \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
-RUN pip3 install --upgrade pip six && pip3 install pyxdg>=0.26 && pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --upgrade pip six && pip3 install --ignore-installed "pyxdg>=0.26" && pip3 install --no-cache-dir -r requirements.txt
 
 ENV FLASK_PROXY_PORT 8080
 
