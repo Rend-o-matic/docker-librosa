@@ -55,3 +55,4 @@ RUN mkdir -p /pythonAction
 COPY pythonrunner.py /pythonAction/pythonrunner.py
 
 CMD ["/bin/bash", "-c", "cd /pythonAction && python -u pythonrunner.py"]
+
