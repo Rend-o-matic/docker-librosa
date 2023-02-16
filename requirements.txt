@@ -88,7 +88,7 @@ toml==0.10.1
 tqdm==4.48.2
 unattended-upgrades==0.1
 urllib3==1.26.5
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 wrapt==1.12.1
 zipp==3.1.0
 zope.event==4.4
